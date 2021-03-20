@@ -43,3 +43,14 @@ class Word:
         print("Congratulations, you have won!")
         print(f"The word was: {theWord.decoded}")
         print(f"The definition of the word is: {theWord.definition}")
+
+    def fillInTheBlanks( wordWePursuit, inputLetter):
+        for idx, wordLetter in enumerate(wordWePursuit.decoded):
+            if wordLetter == inputLetter:
+                wordList = list(wordWePursuit.encoded)
+                wordList[idx] = inputLetter
+                wordWePursuit.encoded = "".join(wordList)
+        print("The letter exists!")
+        print(f"The word now: {wordWePursuit.encoded}")
+
+        return wordWePursuit
